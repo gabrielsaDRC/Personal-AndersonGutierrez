@@ -72,10 +72,13 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-12 sm:mt-12 pt-8 sm:pt-8 text-center">
           <p className="text-gray-400 text-base sm:text-base">
-            © 2024 Anderson Gutierrez Personal Trainer. Todos os direitos reservados.
+            © 2025 Anderson Gutierrez Personal Trainer. Todos os direitos reservados.
           </p>
           <p className="text-gray-500 text-sm sm:text-sm mt-2">
             CREF 194698-G/SP | Transformando vidas através do fitness
+          </p>
+          <p className="text-gray-500 text-xs sm:text-xs mt-2">
+            Desenvolvido por Gabriel dos Santos
           </p>
         </div>
       </div>
