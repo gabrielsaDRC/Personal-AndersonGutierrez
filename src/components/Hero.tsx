@@ -75,12 +75,15 @@ const Hero = () => {
         </div>
       </div>
       
-      <button
-        onClick={scrollToNext}
-        className="absolute bottom-8 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce"
-      >
-        <ChevronDown size={32} />
-      </button>
+      <div className="absolute bottom-8 sm:bottom-8 left-0 right-0 flex justify-center">
+        <button
+          onClick={scrollToNext}
+          className="text-white animate-bounce hover:text-orange-400 transition-colors"
+          aria-label="Rolar para próxima seção"
+        >
+          <ChevronDown size={32} />
+        </button>
+      </div>
     </section>
   );
 };
