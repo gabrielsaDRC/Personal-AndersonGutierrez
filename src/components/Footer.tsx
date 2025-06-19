@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Instagram, Facebook, Mail, MapPin, Phone } from 'lucide-react';
+import { MessageCircle, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -25,15 +25,9 @@ const Footer = () => {
                 href="https://instagram.com/andersongutierrezpersonal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-gray-600 p-3 sm:p-3 rounded-full transition-colors"
+                className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 p-3 sm:p-3 rounded-full transition-all duration-300"
               >
                 <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="bg-gray-700 hover:bg-gray-600 p-3 sm:p-3 rounded-full transition-colors"
-              >
-                <Facebook size={20} />
               </a>
             </div>
           </div>
