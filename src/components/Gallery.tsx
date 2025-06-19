@@ -4,47 +4,47 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      url: '/images/anderson-1.jpg',
+      url: './images/anderson-1.jpg',
       alt: 'Anderson - Treino personalizado'
     },
     {
       id: 2,
-      url: '/images/anderson-2.jpg',
+      url: './images/anderson-2.jpg',
       alt: 'Anderson - Orientação profissional'
     },
     {
       id: 3,
-      url: '/images/anderson-3.jpg',
+      url: './images/anderson-3.jpg',
       alt: 'Anderson - Equipamentos modernos'
     },
     {
       id: 4,
-      url: '/images/anderson-4.jpg',
+      url: './images/anderson-4.jpg',
       alt: 'Anderson - Treino funcional'
     },
     {
       id: 5,
-      url: '/images/anderson-5.jpeg',
+      url: './images/anderson-5.jpeg',
       alt: 'Anderson - Personal training'
     },
     {
       id: 6,
-      url: '/images/anderson-6.jpeg',
+      url: './images/anderson-6.jpeg',
       alt: 'Anderson - Acompanhamento técnico'
     },
     {
       id: 7,
-      url: '/images/anderson-7.jpeg',
+      url: './images/anderson-7.jpeg',
       alt: 'Anderson - Resultados reais'
     },
     {
       id: 8,
-      url: '/images/anderson-8.jpeg',
+      url: './images/anderson-8.jpeg',
       alt: 'Anderson - Metodologia aplicada'
     },
     {
       id: 9,
-      url: '/images/anderson-9.jpeg',
+      url: './images/anderson-9.jpeg',
       alt: 'Anderson - Transformação de vidas'
     }
   ];

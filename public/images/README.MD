@@ -20,7 +20,7 @@ Esta pasta contém as imagens utilizadas no site do Anderson Gutierrez Personal 
 
 1. Adicione suas imagens nesta pasta
 2. Atualize os componentes Gallery.tsx e Career.tsx para usar as imagens locais
-3. Use o caminho relativo: `/images/nome-da-imagem.jpg`
+3. Use o caminho relativo: `./images/nome-da-imagem.jpg`
 
 ## Formatos recomendados:
 - JPG para fotos

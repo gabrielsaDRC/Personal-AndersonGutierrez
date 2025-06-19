@@ -90,7 +90,7 @@ const Career = () => {
           <div className="relative">
             <div className="aspect-w-4 aspect-h-5 rounded-xl overflow-hidden shadow-2xl">
               <img
-                src="/images/anderson-profile.jpg"
+                src="./images/anderson-profile.jpg"
                 alt="Anderson Gutierrez Personal Trainer"
                 className="w-full h-96 sm:h-96 lg:h-full object-cover"
                 loading="lazy"
