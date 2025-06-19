@@ -5,14 +5,14 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white py-16 sm:py-16">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-8 text-center sm:text-left">
           <div className="lg:col-span-2">
             <h3 className="text-2xl sm:text-2xl font-bold mb-4 sm:mb-4">Anderson Gutierrez</h3>
             <p className="text-gray-300 mb-6 sm:mb-6 leading-relaxed text-base sm:text-base">
               Personal Trainer especializado em qualidade de vida, emagrecimento e ganho de massa muscular. 
               Adaptando o treino de acordo com sua rotina!
             </p>
-            <div className="flex space-x-4 sm:space-x-4">
+            <div className="flex justify-center sm:justify-start space-x-4 sm:space-x-4">
               <a
                 href="https://wa.me/5511996400213"
                 target="_blank"
@@ -41,15 +41,15 @@ const Footer = () => {
           <div>
             <h4 className="text-lg sm:text-lg font-semibold mb-4 sm:mb-4">Contato</h4>
             <div className="space-y-3 sm:space-y-3">
-              <div className="flex items-center space-x-3 sm:space-x-3">
+              <div className="flex items-center justify-center sm:justify-start space-x-3 sm:space-x-3">
                 <Phone size={16} className="text-orange-400 flex-shrink-0" />
                 <span className="text-gray-300 text-base sm:text-base">(11) 9 9640-0213</span>
               </div>
-              <div className="flex items-center space-x-3 sm:space-x-3">
+              <div className="flex items-center justify-center sm:justify-start space-x-3 sm:space-x-3">
                 <Mail size={16} className="text-orange-400 flex-shrink-0" />
                 <span className="text-gray-300 text-base sm:text-base break-all">andersongutiedfisica@gmail.com</span>
               </div>
-              <div className="flex items-center space-x-3 sm:space-x-3">
+              <div className="flex items-center justify-center sm:justify-start space-x-3 sm:space-x-3">
                 <MapPin size={16} className="text-orange-400 flex-shrink-0" />
                 <span className="text-gray-300 text-base sm:text-base">São Paulo - SP</span>
               </div>

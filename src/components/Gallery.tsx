@@ -4,33 +4,48 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      url: 'https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=600',
-      alt: 'Treino personalizado'
+      url: '/images/anderson-1.jpg',
+      alt: 'Anderson - Treino personalizado'
     },
     {
       id: 2,
-      url: 'https://images.pexels.com/photos/703012/pexels-photo-703012.jpeg?auto=compress&cs=tinysrgb&w=600',
-      alt: 'Academia moderna'
+      url: '/images/anderson-2.jpg',
+      alt: 'Anderson - Orientação profissional'
     },
     {
       id: 3,
-      url: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=600',
-      alt: 'Equipamentos profissionais'
+      url: '/images/anderson-3.jpg',
+      alt: 'Anderson - Equipamentos modernos'
     },
     {
       id: 4,
-      url: 'https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=600',
-      alt: 'Treino funcional'
+      url: '/images/anderson-4.jpg',
+      alt: 'Anderson - Treino funcional'
     },
     {
       id: 5,
-      url: 'https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=600',
-      alt: 'Personal training'
+      url: '/images/anderson-5.jpeg',
+      alt: 'Anderson - Personal training'
     },
     {
       id: 6,
-      url: 'https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=600',
-      alt: 'Resultados reais'
+      url: '/images/anderson-6.jpeg',
+      alt: 'Anderson - Acompanhamento técnico'
+    },
+    {
+      id: 7,
+      url: '/images/anderson-7.jpeg',
+      alt: 'Anderson - Resultados reais'
+    },
+    {
+      id: 8,
+      url: '/images/anderson-8.jpeg',
+      alt: 'Anderson - Metodologia aplicada'
+    },
+    {
+      id: 9,
+      url: '/images/anderson-9.jpeg',
+      alt: 'Anderson - Transformação de vidas'
     }
   ];
 
@@ -47,29 +62,47 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {images.map((image, index) => (
             <div
               key={image.id}
               className={`relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                index === 0 ? 'sm:col-span-2 sm:row-span-2' : ''
+                index === 0 ? 'col-span-2 row-span-2' : ''
               }`}
             >
-              <img
-                src={image.url}
-                alt={image.alt}
-                className={`w-full object-cover ${
-                  index === 0 ? 'h-80 sm:h-96 md:h-full' : 'h-64 sm:h-64'
-                }`}
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="font-semibold text-base sm:text-base">{image.alt}</p>
-                </div>
+              <div className={`relative bg-gray-50 ${
+                index === 0 ? 'aspect-[3/4]' : 'aspect-[3/4]'
+              }`}>
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  className={`absolute inset-0 w-full h-full ${
+                    index === 4 ? 'object-cover object-center' : 'object-cover'
+                  }`}
+                  style={index === 4 ? { objectPosition: 'center 20%' } : {}}
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-gray-600 text-base">
+            Acompanhe mais conteúdos no meu{' '}
+            <a
+              href="https://instagram.com/andersongutierrezpersonal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-orange-500 hover:text-orange-600 font-semibold transition-colors"
+            >
+              Instagram
+            </a>
+          </p>
         </div>
       </div>
     </section>

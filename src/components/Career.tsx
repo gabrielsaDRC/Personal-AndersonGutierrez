@@ -63,10 +63,9 @@ const Career = () => {
                 </h3>
                 <div className="text-gray-600 text-base sm:text-base leading-relaxed space-y-1">
                   <p>• Emagrecimento, hipertrofia muscular, reabilitação</p>
-                  <p>• Treinador de Ciclismo Indoor Les Mills</p>
+                  <p>• Treinador de Ciclismo Indoor Les Mills (+1000 professores capacitados e treinados)</p>
                   <p>• Especialista em Ciclismo Indoor (Advanced Training)</p>
                   <p>• Time de Performance da IHRSA 2019</p>
-                  <p>• +1000 professores capacitados e treinados</p>
                 </div>
               </div>
             </div>
@@ -91,7 +90,7 @@ const Career = () => {
           <div className="relative">
             <div className="aspect-w-4 aspect-h-5 rounded-xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/images/anderson-profile.jpg"
                 alt="Anderson Gutierrez Personal Trainer"
                 className="w-full h-96 sm:h-96 lg:h-full object-cover"
                 loading="lazy"
