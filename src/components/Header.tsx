@@ -21,6 +21,24 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const getWhatsAppLink = () => {
+    const baseUrl = 'https://wa.me/5511996400213?text=';
+    const message = `Olá! Vi que você tem interesse em começar comigo 💪
+
+Você gostaria de mais informações sobre:
+
+🏋️‍♂️ Avaliação física presencial
+💻 Consultoria online personalizada
+
+Ou prefere só bater um papo e tirar dúvidas? 😊
+
+Me avisa o que você procura que te explico tudo certinho!
+
+Anderson Gutierrez - Personal Trainer`;
+    
+    return baseUrl + encodeURIComponent(message);
+  };
+
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
@@ -57,7 +75,7 @@ const Header = () => {
           <div className="flex items-center space-x-3 sm:space-x-4">
             {/* WhatsApp button - only visible on desktop */}
             <a
-              href="https://wa.me/5511996400213"
+              href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex bg-green-500 hover:bg-green-600 text-white px-4 py-2 sm:px-4 sm:py-2 rounded-full font-medium transition-colors items-center space-x-2 text-sm sm:text-base"

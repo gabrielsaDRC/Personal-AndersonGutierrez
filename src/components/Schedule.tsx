@@ -23,6 +23,24 @@ const Schedule = () => {
     { day: 'Outros horários', time: 'Sob consulta' }
   ];
 
+  const getWhatsAppLink = () => {
+    const baseUrl = 'https://wa.me/5511996400213?text=';
+    const message = `Olá! Vi que você tem interesse em começar comigo 💪
+
+Você gostaria de mais informações sobre:
+
+🏋️‍♂️ Avaliação física presencial
+💻 Consultoria online personalizada
+
+Ou prefere só bater um papo e tirar dúvidas? 😊
+
+Me avisa o que você procura que te explico tudo certinho!
+
+Anderson Gutierrez - Personal Trainer`;
+    
+    return baseUrl + encodeURIComponent(message);
+  };
+
   return (
     <section id="horarios" className="py-16 sm:py-16 lg:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
@@ -178,7 +196,7 @@ const Schedule = () => {
                 Entre em contato para agendar
               </p>
               <a
-                href="https://wa.me/5511996400213"
+                href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-white text-orange-600 px-6 sm:px-6 py-3 sm:py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors text-base sm:text-base"

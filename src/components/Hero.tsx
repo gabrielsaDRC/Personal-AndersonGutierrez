@@ -9,6 +9,40 @@ const Hero = () => {
     }
   };
 
+  const getWhatsAppLink = (type: 'avaliacao' | 'consultoria') => {
+    const baseUrl = 'https://wa.me/5511996400213?text=';
+    
+    let message = '';
+    
+    if (type === 'avaliacao') {
+      message = `Olá! Gostaria de agendar uma avaliação física presencial, certo?
+
+Por favor, informe:
+* Seu nome completo:
+* Data e horário preferenciais (ex: 25/06, 15h):
+* Local de atendimento (ex: meu estúdio, sua residência*):
+
+*Se for na residência, confirme o bairro.
+Aguardo seus dados para confirmar na agenda! 😊
+
+Anderson Gutierrez - Personal Trainer`;
+    } else if (type === 'consultoria') {
+      message = `Olá! Interessado(a) na consultoria online, certo?
+
+Para criar seu plano personalizado, preciso saber:
+* Seu nome completo:
+* Melhor horário para a videochamada (ex: seg/18h):
+* Objetivo principal (ex: emagrecimento, hipertrofia, condicionamento):
+* Equipamentos disponíveis (ex: halteres, elástico, nenhum):
+
+Envio o link da chamada após confirmação! 💻✨
+
+Anderson Gutierrez - Personal Trainer`;
+    }
+    
+    return baseUrl + encodeURIComponent(message);
+  };
+
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="absolute inset-0 bg-black/30"></div>
@@ -30,7 +64,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center mb-12 sm:mb-12">
             <a
-              href="https://wa.me/5511996400213"
+              href={getWhatsAppLink('avaliacao')}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 sm:px-8 sm:py-4 rounded-full font-semibold text-lg sm:text-lg transition-all duration-300 transform hover:scale-105"
@@ -38,7 +72,7 @@ const Hero = () => {
               Agende sua avaliação física presencial
             </a>
             <a
-              href="https://wa.me/5511996400213"
+              href={getWhatsAppLink('consultoria')}
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 sm:px-8 sm:py-4 rounded-full font-semibold text-lg sm:text-lg transition-all duration-300"
@@ -75,7 +109,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-8 sm:bottom-8 left-0 right-0 flex justify-center">
+      <div className="absolute bottom-8 sm:bottom-8 left-1/2 transform -translate-x-1/2">
         <button
           onClick={scrollToNext}
           className="text-white animate-bounce hover:text-orange-400 transition-colors"

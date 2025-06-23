@@ -2,6 +2,24 @@ import React from 'react';
 import { MessageCircle, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
+  const getWhatsAppLink = () => {
+    const baseUrl = 'https://wa.me/5511996400213?text=';
+    const message = `Olá! Vi que você tem interesse em começar comigo 💪
+
+Você gostaria de mais informações sobre:
+
+🏋️‍♂️ Avaliação física presencial
+💻 Consultoria online personalizada
+
+Ou prefere só bater um papo e tirar dúvidas? 😊
+
+Me avisa o que você procura que te explico tudo certinho!
+
+Anderson Gutierrez - Personal Trainer`;
+    
+    return baseUrl + encodeURIComponent(message);
+  };
+
   return (
     <footer className="bg-slate-900 text-white py-16 sm:py-16">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
@@ -14,7 +32,7 @@ const Footer = () => {
             </p>
             <div className="flex justify-center sm:justify-start space-x-4 sm:space-x-4">
               <a
-                href="https://wa.me/5511996400213"
+                href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 p-3 sm:p-3 rounded-full transition-colors"
