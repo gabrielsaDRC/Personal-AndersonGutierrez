@@ -9,10 +9,6 @@ const About = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-6 sm:mb-6">
             Sobre Anderson Gutierrez
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ensinar o caminho a seguir de acordo com seus objetivos e metas de forma humanizada, 
-            entendendo que cada indivíduo precisa adaptar a vida fitness ao seu dia a dia.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-12 items-center mb-16 sm:mb-16">
