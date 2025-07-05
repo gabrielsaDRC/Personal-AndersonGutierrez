@@ -1,10 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
 import { ChevronDown, Dumbbell, Target, TrendingUp } from 'lucide-react';
+import { useModal } from '../contexts/ModalContext';
 import BookingModal from './BookingModal';
 
 const Hero = () => {
   const [modalType, setModalType] = useState<'avaliacao' | 'consultoria' | null>(null);
+  const { setModalOpen } = useModal();
+
+  const handleOpenModal = (type: 'avaliacao' | 'consultoria') => {
+    setModalType(type);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalType(null);
+    setModalOpen(false);
+  };
 
   const scrollToNext = () => {
     const element = document.getElementById('sobre');
@@ -35,13 +47,13 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center mb-12 sm:mb-12">
               <button
-                onClick={() => setModalType('avaliacao')}
+                onClick={() => handleOpenModal('avaliacao')}
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 sm:px-8 sm:py-4 rounded-full font-semibold text-lg sm:text-lg transition-all duration-300 transform hover:scale-105"
               >
                 Agende sua avaliação física presencial
               </button>
               <button
-                onClick={() => setModalType('consultoria')}
+                onClick={() => handleOpenModal('consultoria')}
                 className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 sm:px-8 sm:py-4 rounded-full font-semibold text-lg sm:text-lg transition-all duration-300"
               >
                 Agende sua consultoria e treino online
@@ -89,7 +101,7 @@ const Hero = () => {
 
       <BookingModal
         isOpen={modalType !== null}
-        onClose={() => setModalType(null)}
+        onClose={handleCloseModal}
         type={modalType || 'avaliacao'}
       />
     </>

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageCircle } from 'lucide-react';
+import { useModal } from '../contexts/ModalContext';
 import GeneralContactModal from './GeneralContactModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const { setModalOpen } = useModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,16 @@ const Header = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
+  };
+
+  const handleOpenContactModal = () => {
+    setIsContactModalOpen(true);
+    setModalOpen(true);
+  };
+
+  const handleCloseContactModal = () => {
+    setIsContactModalOpen(false);
+    setModalOpen(false);
   };
 
   return (
@@ -60,7 +72,7 @@ const Header = () => {
             <div className="flex items-center space-x-3 sm:space-x-4">
               {/* WhatsApp button - only visible on desktop */}
               <button
-                onClick={() => setIsContactModalOpen(true)}
+                onClick={handleOpenContactModal}
                 className="hidden md:flex bg-green-500 hover:bg-green-600 text-white px-4 py-2 sm:px-4 sm:py-2 rounded-full font-medium transition-colors items-center space-x-2 text-sm sm:text-base"
               >
                 <MessageCircle size={16} />
@@ -106,7 +118,7 @@ const Header = () => {
 
       <GeneralContactModal
         isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
+        onClose={handleCloseContactModal}
       />
     </>
   );

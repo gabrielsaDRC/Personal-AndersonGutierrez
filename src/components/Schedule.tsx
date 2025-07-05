@@ -1,10 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
 import { Clock, Calendar, MapPin, Phone } from 'lucide-react';
+import { useModal } from '../contexts/ModalContext';
 import GeneralContactModal from './GeneralContactModal';
 
 const Schedule = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const { setModalOpen } = useModal();
+
+  const handleOpenContactModal = () => {
+    setIsContactModalOpen(true);
+    setModalOpen(true);
+  };
+
+  const handleCloseContactModal = () => {
+    setIsContactModalOpen(false);
+    setModalOpen(false);
+  };
 
   const presencialSchedule = [
     { day: 'Segunda-feira', time: '05:30 - 10:30' },
@@ -183,7 +195,7 @@ const Schedule = () => {
                   Entre em contato para agendar
                 </p>
                 <button
-                  onClick={() => setIsContactModalOpen(true)}
+                  onClick={handleOpenContactModal}
                   className="inline-block bg-white text-orange-600 px-6 sm:px-6 py-3 sm:py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors text-base sm:text-base"
                 >
                   Chamar no WhatsApp
@@ -196,7 +208,7 @@ const Schedule = () => {
 
       <GeneralContactModal
         isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
+        onClose={handleCloseContactModal}
       />
     </>
   );

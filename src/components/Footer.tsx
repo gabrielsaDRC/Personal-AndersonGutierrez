@@ -1,10 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
 import { MessageCircle, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { useModal } from '../contexts/ModalContext';
 import GeneralContactModal from './GeneralContactModal';
 
 const Footer = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const { setModalOpen } = useModal();
+
+  const handleOpenContactModal = () => {
+    setIsContactModalOpen(true);
+    setModalOpen(true);
+  };
+
+  const handleCloseContactModal = () => {
+    setIsContactModalOpen(false);
+    setModalOpen(false);
+  };
 
   return (
     <>
@@ -19,7 +31,7 @@ const Footer = () => {
               </p>
               <div className="flex justify-center sm:justify-start space-x-4 sm:space-x-4">
                 <button
-                  onClick={() => setIsContactModalOpen(true)}
+                  onClick={handleOpenContactModal}
                   className="bg-green-500 hover:bg-green-600 p-3 sm:p-3 rounded-full transition-colors"
                 >
                   <MessageCircle size={20} />
@@ -83,7 +95,7 @@ const Footer = () => {
 
       <GeneralContactModal
         isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
+        onClose={handleCloseContactModal}
       />
     </>
   );

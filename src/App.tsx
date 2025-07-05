@@ -1,4 +1,5 @@
 import React from 'react';
+import { ModalProvider } from './contexts/ModalContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,17 +12,19 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <Hero />
-      <About />
-      <Gallery />
-      <Career />
-      <Tools />
-      <Schedule />
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+    <ModalProvider>
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Hero />
+        <About />
+        <Gallery />
+        <Career />
+        <Tools />
+        <Schedule />
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </ModalProvider>
   );
 }
 
